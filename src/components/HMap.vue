@@ -10,27 +10,25 @@
 </template>
 
 <script>
-import {L} from 'leaflet';
+import {latLng} from 'leaflet';
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
     export default {
         name: "HMap",
-        data: function(){
-            return {
-                zoom: 13,
-                center: L.latLng(47.41322, -1.219482),
-                url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                attribution:
-        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-                marker: L.latLng(47.3, -32.2)
-            }
-        },
         components: {
             LMap,
             LTileLayer,
             LMarker,
         },
+        data: function(){
+            return {
+                zoom: 13,
+                center: latLng(5.0670, -75.5046),
+                url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                attribution: '&copy; Mapa Histórico',
+                marker: latLng(5.0670, -75.5046),
+            };
+        },
     }
-
 </script>
 
 <style scoped>
