@@ -1,28 +1,19 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="container-fluid">
+    <History />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import History from './components/History.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    History
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
