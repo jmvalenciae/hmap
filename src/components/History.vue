@@ -1,11 +1,6 @@
 <template>
   <!-- .container -->
-  <div class="container">
-      <div class="row">
-          <div class="col-12">
-              <h1 class="text-center text-info">Historic Map</h1>
-          </div>
-      </div>
+  <div class="container-fluid">
       <!-- /.row -->
 
       <div class="row">
