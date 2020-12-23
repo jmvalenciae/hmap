@@ -1,20 +1,13 @@
 <template>
 <!-- .row map -->
-<div class="row map">
+<div id="map" class="row">
 <l-map  
     :zoom="zoom" 
     :center="center"
+    :options="{zoomControl: false}"
     >
 <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
 <l-marker :lat-lng="marker"></l-marker>
-
-<l-control
-    :position="'topright'"
-    class="encabezado"
->
-<img src="../assets/images/SIMAC2.png" alt="SIMAC2">
-</l-control>
-
 <l-control-scale position="bottomleft" :metric="true" :imperial="true">
 </l-control-scale>
 </l-map>
@@ -27,8 +20,8 @@ import {latLng} from 'leaflet';
 import {LMap, 
         LTileLayer, 
         LMarker, 
-        LControl,
-        LControlScale} from 'vue2-leaflet';
+        LControlScale,
+        } from 'vue2-leaflet';
 
     export default {
         name: "HMap",
@@ -36,7 +29,6 @@ import {LMap,
             LMap,
             LTileLayer,
             LMarker,
-            LControl,
             LControlScale,
         },
 
@@ -56,11 +48,10 @@ import {LMap,
 </script>
 
 <style scoped>
-.map{
+#map{
     height: 100vh;
-}
-
-.encabezado {
-    border: 1px #111 solid;
+    display: block;
+    z-index: 0;
+    position: relative;
 }
 </style>

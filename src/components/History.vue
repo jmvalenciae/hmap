@@ -6,6 +6,7 @@
       <div class="row">
       <div class="col-12">
           <HMap/>
+          <Index/>
       </div>
       </div>
       <!-- /.row -->
@@ -14,10 +15,12 @@
 </template>
 
 <script>
-import HMap from './HMap.vue'
+import HMap from './HMap.vue';
+import Index from './Index.vue'
 export default {
   name: 'History',
-  components: {HMap}
+  components: {HMap, 
+               Index}
 }
 </script>
 

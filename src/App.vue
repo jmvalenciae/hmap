@@ -1,6 +1,6 @@
 <template>
   <div id="container-fluid">
-    <History />
+    <History/>
   </div>
 </template>
 
