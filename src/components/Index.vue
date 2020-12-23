@@ -112,7 +112,8 @@
                     </a>
                 </div>
             </div>
-        </div></section>
+        </div>
+</section>
 <!-- /.bienvenidos -->
 </template>
 
@@ -129,9 +130,123 @@ export default {
     position: fixed;
     z-index: 1;
     top: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; 
     }
 
-#map {
+.barranav{
+    position:fixed;
+    right:0;
+    top:0;
 }
 
+.fixed{
+    position:fixed;
+    top:0;
+    z-index: 1;
+}
+
+.logosimac{
+    padding-left: 5px;
+    padding-bottom: 10px;
+    z-index: 0;
+}
+.geoportal b span{
+    font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;;
+    font-size: 30px;
+    color: white;
+}
+.layer-list a{
+    position: absolute;
+    display: block;
+    left: 2px;
+    top: 210px;
+    width: 76px;
+    opacity: 0.95;
+    background-color: #E96729;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+.layer-list a{
+    border-bottom: 1px solid black;
+}
+
+
+.transition-rotate{
+    -webkit-transition: -webkit-transform 0.5s;
+    transition:transform 0.5s;
+}
+.transition-rotate:hover{
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(45deg);
+}
+
+ul,ol{
+    list-style: none;
+}
+
+.link-border{
+    border-right: 0.5px solid gray;
+    border-left: 0.5px solid gray;
+    padding-right: 0px;
+}
+
+.col {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.layer-list a{
+    position:relative;
+    display: block;
+}
+
+
+a[data-title]:hover:after
+{
+    background:#343a40;
+    border-radius:5px;
+    color:#fff;
+    content:attr(data-title);
+    top:20%;
+    left:100%;
+    padding:5px 15px;
+    position:absolute;
+    z-index:98;
+    white-space:nowrap;
+}
+
+.button-position{
+    position: fixed;
+    display: inline-block;
+    bottom: 5%;
+    right: 2%;
+    transition: right 0.5s;
+}
+
+.second-position{
+    position: fixed;
+    display: inline-block;
+    bottom: 5%;
+    right: 33%;
+    transition: left 0.5s;
+}
+
+.visible-table{
+    display: block;
+}
+
+.hidden-table{
+    display: none;
+}
+
+/*# sourceMappingURL=estilos.css.map */
 </style>
