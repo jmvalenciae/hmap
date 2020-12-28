@@ -6,21 +6,23 @@
     :center="center"
     :options="{zoomControl: false}"
     >
-<l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-<l-marker :lat-lng="marker"></l-marker>
-<l-control-scale position="bottomleft" :metric="true" :imperial="true">
-</l-control-scale>
+<l-tile-layer :url="url" :attribution="attribution"/>
+<l-marker :lat-lng="marker"/>
+<l-control-scale position="bottomleft" :metric="true" :imperial="true"/>
+<l-geo-json :geojson="geojson"/>
 </l-map>
 </div>
 <!-- /.row map -->
 </template>
 
 <script>
+import manizalesmap from '../assets/json/ManzlesUrb.json'
 import {latLng} from 'leaflet';
 import {LMap, 
         LTileLayer, 
         LMarker, 
         LControlScale,
+        LGeoJson,
         } from 'vue2-leaflet';
 
     export default {
@@ -30,6 +32,7 @@ import {LMap,
             LTileLayer,
             LMarker,
             LControlScale,
+            LGeoJson,
         },
 
         data(){
@@ -39,9 +42,9 @@ import {LMap,
                 url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                 attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>',
                 marker: latLng(5.06889, -75.51738), 
+                geojson: manizalesmap,
             };
         },
-
         methods: {
         }
     }
