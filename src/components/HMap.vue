@@ -9,14 +9,16 @@
 <l-tile-layer :url="url" :attribution="attribution"/>
 <l-marker :lat-lng="marker"/>
 <l-control-scale position="bottomleft" :metric="true" :imperial="true"/>
-<l-geo-json :geojson="geojson"/>
+<l-geo-json :geojson="geojson"
+            :options-style="StyleFunction"/>
 </l-map>
 </div>
 <!-- /.row map -->
 </template>
 
 <script>
-import manizalesmap from '../assets/json/ManzlesUrb.json'
+import manizalesmap from '../assets/json/CaldasMun.json';
+//import caldasmap from '../assets/json/Caldas.json';
 import {latLng} from 'leaflet';
 import {LMap, 
         LTileLayer, 
@@ -45,7 +47,19 @@ import {LMap,
                 geojson: manizalesmap,
             };
         },
-        methods: {
+        
+        computed:{
+            StyleFunction(){
+                return() => {
+                    return {
+                    weight: 2,
+                    color: '#111111',
+                    opacity: 1,
+                    fillColor: '#111111',
+                    fillOpacity: 0.1
+                    };
+                };
+            }
         }
     }
 </script>
