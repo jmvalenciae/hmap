@@ -120,6 +120,16 @@
                     </a>
                 </div>
             </div>
+        <footer>
+            <div class="button-position">
+                <button type="button" class="btn btn-dark button-hide" data-toggle="modal" data-target="#myModal">
+                    Convenciones
+                </button>
+                <button type="button" class="btn btn-dark button-hide" data-toggle="modal" data-target="#myModal2">
+                    Colaboradores
+                </button>
+            </div>
+        </footer>
         </div>
 </section>
 <!-- /.bienvenidos -->
@@ -128,12 +138,6 @@
 <script>
 export default {
     name: 'Index',
-    methods:{
-        mouseOver: function(imagepath){
-            this.src = '../assets/images/inicio2.svg';
-            return imagepath;
-        }
-    }
 }
 </script>
 
