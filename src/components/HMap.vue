@@ -7,7 +7,10 @@
     :options="{zoomControl: false}"
     >
 <l-tile-layer :url="url" :attribution="attribution"/>
-<l-marker :lat-lng="marker"/>
+<l-marker 
+    v-for="(sta, index) in stations" :key="index"
+    :lat-lng="getLatLng(sta.Latitud, sta.__EMPTY_7, sta.__EMPTY_8, sta.Longitud, sta.__EMPTY_10, sta.__EMPTY_11)"/>
+    
 <l-control-scale position="bottomleft" :metric="true" :imperial="true"/>
 <l-geo-json :geojson="geojson"
             :options-style="StyleFunction"/>
@@ -18,6 +21,7 @@
 
 <script>
 import manizalesmap from '../assets/json/CaldasMun.json';
+import CaldasStations from '../assets/json/estaciones.json'
 //import caldasmap from '../assets/json/Caldas.json';
 import {latLng} from 'leaflet';
 import {LMap, 
@@ -45,6 +49,7 @@ import {LMap,
                 attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>',
                 marker: latLng(5.06889, -75.51738), 
                 geojson: manizalesmap,
+                stations: CaldasStations,
             };
         },
         
@@ -60,7 +65,20 @@ import {LMap,
                     };
                 };
             }
+        },
+
+        methods: {
+            getLatLng: function(lat, latmin, latsec, lng, lngmin, lngsec){
+                var Lat = lat + latmin/60.0 + latsec/36e2
+                var Lng = lng + lngmin/60.0 + lngsec/36e2
+                return latLng(Lat, -Lng);
+            }
+        },
+
+        mounted(){
+            console.log(this.stations)
         }
+
     }
 </script>
 
