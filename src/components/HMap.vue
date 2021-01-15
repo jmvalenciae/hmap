@@ -6,37 +6,46 @@
     :center="center"
     :options="{zoomControl: false}"
     >
-<l-tile-layer :url="url" :attribution="attribution"/>
-<l-marker 
-    v-for="(sta, index) in stations" :key="index"
-    :lat-lng="getLatLng(sta.Latitud, sta.__EMPTY_7, sta.__EMPTY_8, 
-                        sta.Longitud, sta.__EMPTY_10, sta.__EMPTY_11)">
-<l-tooltip>{{sta.NOMBRES}}</l-tooltip>
-<l-icon 
-    v-if="sta.Red === 'Comunitarias'">
-<img src="../assets/icons/Comunitarias.png">
-</l-icon>
-<l-icon 
-    v-if="sta.Red === 'SAT Deslizamientos'">
-<img src="../assets/icons/nubladoNoche.png">
-</l-icon>
-<l-icon 
-    v-if="sta.Red === 'Cuencas'">
-<img src="../assets/icons/desconectada.png">
-</l-icon>
-<l-icon 
-    v-if="sta.Red === 'SISMOLÓGICA'">
-<img src="../assets/icons/acelerografica.png">
-</l-icon>
-<l-icon 
-    v-if="sta.Red === 'CHEC'">
-<img src="../assets/icons/desconectadaParcial.png">
-</l-icon>
-</l-marker>
-    
-<l-control-scale position="bottomleft" :metric="true" :imperial="true"/>
-<l-geo-json :geojson="geojson"
-            :options-style="StyleFunction"/>
+    <l-tile-layer :url="url" :attribution="attribution"/>
+    <l-control-scale position="bottomleft" :metric="true" :imperial="true"/>
+    <l-geo-json :geojson="geojson"
+                :options-style="StyleFunction"/>
+
+
+    <l-marker 
+        v-for="(sta, index) in stations" :key="index"
+        :lat-lng="getLatLng(sta.Latitud, sta.__EMPTY_7, sta.__EMPTY_8, 
+                            sta.Longitud, sta.__EMPTY_10, sta.__EMPTY_11)">
+        <l-tooltip>{{sta.NOMBRES}}</l-tooltip>
+        <l-popup><h1>Hello</h1></l-popup>
+
+        <l-icon 
+            v-if="sta.Red === 'Comunitarias'">
+        <img src="../assets/icons/Comunitarias.png">
+        </l-icon>
+
+        <l-icon 
+            v-if="sta.Red === 'SAT Deslizamientos'">
+        <img src="../assets/icons/nubladoNoche.png">
+        </l-icon>
+
+        <l-icon 
+            v-if="sta.Red === 'Cuencas'">
+        <img src="../assets/icons/desconectada.png">
+        </l-icon>
+
+        <l-icon 
+            v-if="sta.Red === 'SISMOLÓGICA'">
+        <img src="../assets/icons/acelerografica.png">
+        </l-icon>
+
+        <l-icon 
+            v-if="sta.Red === 'CHEC'">
+        <img src="../assets/icons/desconectadaParcial.png">
+        </l-icon>
+
+    </l-marker>
+        
 </l-map>
 </div>
 <!-- /.row map -->
@@ -53,7 +62,8 @@ import {LMap,
         LControlScale,
         LGeoJson,
         LIcon,
-        LTooltip
+        LTooltip,
+        LPopup,
         } from 'vue2-leaflet';
 
     export default {
@@ -65,7 +75,8 @@ import {LMap,
             LControlScale,
             LGeoJson,
             LIcon,
-            LTooltip
+            LTooltip,
+            LPopup,
         },
 
         data(){
