@@ -17,7 +17,10 @@
         :lat-lng="getLatLng(sta.Latitud, sta.__EMPTY_7, sta.__EMPTY_8, 
                             sta.Longitud, sta.__EMPTY_10, sta.__EMPTY_11)">
         <l-tooltip>{{sta.NOMBRES}}</l-tooltip>
-        <l-popup><h1>Hello</h1></l-popup>
+        <l-popup class=probe><MapMenu v-bind:station="sta"/></l-popup>
+        
+
+
 
         <l-icon 
             v-if="sta.Red === 'Comunitarias'">
@@ -55,6 +58,7 @@
 import manizalesmap from '../assets/json/CaldasMun.json';
 import CaldasStations from '../assets/json/estaciones.json'
 //import caldasmap from '../assets/json/Caldas.json';
+import MapMenu from "./MapMenu.vue"
 import {latLng} from 'leaflet';
 import {LMap, 
         LTileLayer, 
@@ -64,60 +68,62 @@ import {LMap,
         LIcon,
         LTooltip,
         LPopup,
+        //Lcontrol,
         } from 'vue2-leaflet';
 
-    export default {
-        name: "HMap",
-        components: {
-            LMap,
-            LTileLayer,
-            LMarker,
-            LControlScale,
-            LGeoJson,
-            LIcon,
-            LTooltip,
-            LPopup,
-        },
+export default {
+    name: "HMap",
+    components: {
+        LMap,
+        LTileLayer,
+        LMarker,
+        LControlScale,
+        LGeoJson,
+        LIcon,
+        LTooltip,
+        LPopup,
+        //Lcontrol,
+        MapMenu,
+    },
 
-        data(){
-            return {
-                zoom: 9,
-                center: latLng(5.06889, -75.51738),
-                url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>',
-                marker: latLng(5.06889, -75.51738), 
-                geojson: manizalesmap,
-                stations: CaldasStations,
-            };
-        },
-        
-        computed:{
-            StyleFunction(){
-                return() => {
-                    return {
-                    weight: 2,
-                    color: '#111111',
-                    opacity: 1,
-                    fillColor: '#111111',
-                    fillOpacity: 0.1
-                    };
+    data(){
+        return {
+            zoom: 9,
+            center: latLng(5.06889, -75.51738),
+            url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>',
+            geojson: manizalesmap,
+            stations: CaldasStations,
+        };
+    },
+
+    computed:{
+        StyleFunction(){
+            return() => {
+                return {
+                weight: 2,
+                color: '#111111',
+                opacity: 1,
+                fillColor: '#111111',
+                fillOpacity: 0.1
                 };
-            }
-        },
-
-        methods: {
-            getLatLng: function(lat, latmin, latsec, lng, lngmin, lngsec){
-                var Lat = lat + latmin/60.0 + latsec/36e2
-                var Lng = lng + lngmin/60.0 + lngsec/36e2
-                return latLng(Lat, -Lng);
-            }
-        },
-
-        mounted(){
-            console.log(this.stations)
+            };
         }
+    },
 
+    methods: {
+        getLatLng: function(lat, latmin, latsec, lng, lngmin, lngsec){
+            var Lat = lat + latmin/60.0 + latsec/36e2
+            var Lng = lng + lngmin/60.0 + lngsec/36e2
+            return latLng(Lat, -Lng);
+        }
+    },
+
+    mounted(){
+        console.log(this.stations)
     }
+
+}
 </script>
 
 <style scoped>
@@ -127,4 +133,5 @@ import {LMap,
     z-index: 0;
     position: relative;
 }
+
 </style>
