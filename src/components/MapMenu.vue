@@ -4,9 +4,9 @@
     <div>
         <nav class="navbar nav-tabs navbar-expand-lg">
             <ul class="navbar-nav ml-auto">
-                <li class="navbar-item"><a class="nav-link active" href="#">Información</a></li>
-                <li class="navbar-item"><a class="nav-link active" href="#">Variables</a></li>
-                <li class="navbar-item"><a class="nav-link active" href="#">Galería</a></li>
+                <li class="navbar-item"><a class="nav-link" href="#">Información</a></li>
+                <li class="navbar-item"><a class="nav-link" href="#">Variables</a></li>
+                <li class="navbar-item"><a class="nav-link" href="#">Galería</a></li>
             </ul>
         </nav>
     </div>
