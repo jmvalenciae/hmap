@@ -26,49 +26,65 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="http://cdiac.manizales.unal.edu.co/sistema-alerta-temprana-test/MapaManizales/">
-                            <img src="../assets/images/inicio.svg" 
-                                 class="img-fluid" width="35" height="35" alt="Logo del Sitio" title="Inicio">
+                            <img :src="inicio" 
+                                 @mouseover="inicio = toggleImg('inicio2.svg')" 
+                                 @mouseleave="inicio = toggleImg('inicio.svg')"
+                                 class="img-fluid" width="35" height="35" alt="Logo del Sitio" title="Inicio"/>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://idea.manizales.unal.edu.co/reporte-meteorologico.html" target="_blank" title="Otros Reportes">
-                            <img src="../assets/images/meteorologico.svg" 
+                            <img :src="meteorologico" 
+                                 @mouseover="meteorologico = toggleImg('meteorologico2.svg')" 
+                                 @mouseleave="meteorologico = toggleImg('meteorologico.svg')"
                                  width="35" height="35" alt="Logo del Sitio" title="Reporte Meteorológico">
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://cdiac.manizales.unal.edu.co/gestion-riesgo/web/app.php/gestion_riesgo/generar_reporte/seleccionar_tipo_reporte" target="_blank" title="Reportes">
-                            <img src="../assets/images/generaReporte.svg" 
+                            <img :src="generaReporte"
+                                 @mouseover="generaReporte = toggleImg('generaReporte2.svg')" 
+                                 @mouseleave="generaReporte = toggleImg('generaReporte.svg')"
                                  width="35" height="35" alt="Logo del Sitio" title="Reportes">
                         </a>
                     </li>
                     <li class="nav-item">
                         <a  class="nav-link" href="http://cdiac.manizales.unal.edu.co/gestion-riesgo/web/app.php/gestion_riesgo/generar_reporte/seleccionar_tipo_reporte_grafico" target="_blank" title="Reportes Gráficos">
-                            <img src="../assets/images/reporteGrafico.svg" 
+                            <img :src="reporteGrafico" 
+                                 @mouseover= "reporteGrafico = toggleImg('reporteGrafico2.svg')" 
+                                 @mouseleave="reporteGrafico = toggleImg('reporteGrafico.svg')"
                                  width="35" height="35" alt="Logo del Sitio" title="Reportes Gráficos">
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://cdiac.manizales.unal.edu.co/indicadores/public/index" target="_blank" >
-                            <img src="../assets/images/cdiac.svg" 
+                            <img :src="cdiac" 
+                                 @mouseover="cdiac = toggleImg('cdiac2.svg')" 
+                                 @mouseleave="cdiac = toggleImg('cdiac.svg')"
                                  width="35" height="35" title="Datos Históricos">
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://www.facebook.com/SIMACUNAL/" target="_blank" >
-                            <img src="../assets/images/facebook.svg" 
+                            <img :src="facebook" 
+                                 @mouseover="facebook = toggleImg('facebook2.svg')" 
+                                 @mouseleave="facebook = toggleImg('facebook.svg')"
                                  width="35" height="35" alt="Logo del Sitio" title="Página de Facebook">
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://twitter.com/simac_unal" target="_blank">
-                            <img src="../assets/images/twitter.svg" 
+                            <img :src="twitter" 
+                                 @mouseover="twitter = toggleImg('twitter2.svg')" 
+                                 @mouseleave="twitter = toggleImg('twitter.svg')"
                                  width="35" height="35" alt="Logo del Sitio" title="Página de Twitter">
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://cdiac.manizales.unal.edu.co/gestion-riesgo/web/gestion_riesgo/solicitud_informacion/seleccionar_formulario" target="_blank">
-                            <img src="../assets/images/correo.svg" 
+                            <img :src="correo" 
+                                 @mouseover="correo = toggleImg('correo2.svg')" 
+                                 @mouseleave="correo = toggleImg('correo.svg')"
                                  width="35" height="35" alt="Logo del Sitio" title="Contáctanos">
                         </a>
                     </li>
@@ -146,12 +162,26 @@ export default {
     data(){
         return{
             show: false,
-        }
+            inicio:require('../assets/images/inicio.svg'),
+            meteorologico:require('../assets/images/meteorologico.svg'), 
+            generaReporte:require('../assets/images/generaReporte.svg'), 
+            reporteGrafico:require('../assets/images/reporteGrafico.svg'), 
+            cdiac:require('../assets/images/cdiac.svg'), 
+            facebook:require('../assets/images/facebook.svg'), 
+            twitter:require('../assets/images/twitter.svg'),
+            correo:require('../assets/images/correo.svg')
+            }
     },
 
     methods: {
         toggleNavbar(){
             this.show = !this.show;
+        },
+        getImg(pic){
+            return require('../assets/images/'+pic);
+        },
+        toggleImg(img){
+            return require('../assets/images/'+img);
         }
     }
 }
