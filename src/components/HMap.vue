@@ -55,9 +55,7 @@
 </template>
 
 <script>
-import manizalesmap from '../assets/json/CaldasMun.json';
-import CaldasStations from '../assets/json/estaciones.json'
-//import caldasmap from '../assets/json/Caldas.json';
+import caldasmap from '../assets/json/CaldasMun.json';
 import MapMenu from "./MapMenu.vue"
 import {latLng} from 'leaflet';
 import {LMap, 
@@ -92,13 +90,13 @@ export default {
             center: latLng(5.06889, -75.51738),
             url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>',
-            geojson: manizalesmap,
-            stations: CaldasStations,
+            geojson: caldasmap,
         };
     },
 
     computed:{
         StyleFunction(){
+            /* Geojson style */
             return() => {
                 return {
                 weight: 2,
@@ -108,6 +106,11 @@ export default {
                 fillOpacity: 0.1
                 };
             };
+        },
+
+        stations(){
+            /* store.js data (vuex) */
+            return this.$store.state.stations;
         }
     },
 

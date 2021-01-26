@@ -3,11 +3,13 @@ import './scss/main.scss'
 import Vue from 'vue'
 import App from './App.vue'
 import { Icon } from 'leaflet';
+import { store } from './store/store'
 
 
 Vue.config.productionTip = false
 
 new Vue({
+  store: store,
   render: h => h(App),
 }).$mount('#app')
 
