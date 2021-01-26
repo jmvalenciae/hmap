@@ -18,8 +18,6 @@
                             sta.Longitud, sta.__EMPTY_10, sta.__EMPTY_11)">
         <l-tooltip>{{sta.NOMBRES}}</l-tooltip>
         <l-popup class=probe><MapMenu v-bind:station="sta"/></l-popup>
-        
-
 
 
         <l-icon 

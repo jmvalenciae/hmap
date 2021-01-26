@@ -1,35 +1,55 @@
 <template>
-<section>
-<div>
-    <div>
-        <nav class="navbar nav-tabs navbar-expand-lg">
-            <ul class="navbar-nav ml-auto">
-                <li class="navbar-item"><a class="nav-link" href="#">Información</a></li>
-                <li class="navbar-item"><a class="nav-link" href="#">Variables</a></li>
-                <li class="navbar-item"><a class="nav-link" href="#">Galería</a></li>
-            </ul>
-        </nav>
-    </div>
+<div id="menu">
+    <TabMenu :tabs="['Info', 'Galeria', 'Otros']" 
+             :selected="selected" @selected="setSelected">
+
+    <Tab :isSelected="selected === 'Info'">
+        <h1>Hello World</h1>
+    </Tab>
+
+    <Tab :isSelected="selected === 'Galeria'">
+        <p>Goodbye world</p>
+    </Tab>
+
+    <Tab :isSelected="selected === 'Otros'">
+        <li>Hello</li>
+        <li>Hello</li>
+        <li>Hello</li>
+    </Tab>
+    </TabMenu>
 </div>
-</section>
 </template>
 <script>
+import TabMenu from './tabs/TabMenu.vue'
+import Tab from './tabs/Tab.vue'
+
 export default {
     name: "MapMenu",
+
+    components: {TabMenu, Tab},
+
     props: {
         station:Object 
+    },
+
+    data(){
+        return {
+            selected: 'Info'
+        }
+    },
+
+    methods: {
+        setSelected(tab){
+            this.selected = tab;
+        }
     }
 }
 </script>
-<style scoped>
-.menu {
-    position:relative;
-}
-li {
-    margin: 10px
-}
 
-li:hover {
-    background-color:#ff0;
+<style scoped>
+#menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 </style>
