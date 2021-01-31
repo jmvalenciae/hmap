@@ -1,7 +1,7 @@
 <template>
 <header class="fixed" role="banner" id="encabezado">
     <a class="navbar-brand" href="https://www.facebook.com/SIMACUNAL/" target="_blank">
-        <img class="logosimac" src="../assets/images/SIMAC2.png"  width="200" height="90" alt="Logo del Sitio">
+        <img class="logosimac" src="@/assets/images/SIMAC2.png"  width="200" height="90" alt="Logo del Sitio">
     </a>
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark barranav" v-bind:class="{'navbarOpen': show}">
         <!-- Brand -->
@@ -92,14 +92,14 @@ export default {
     data(){
         return {
             show: false,
-            inicio:require('../assets/images/inicio.svg'),
-            meteorologico:require('../assets/images/meteorologico.svg'), 
-            generaReporte:require('../assets/images/generaReporte.svg'), 
-            reporteGrafico:require('../assets/images/reporteGrafico.svg'), 
-            cdiac:require('../assets/images/cdiac.svg'), 
-            facebook:require('../assets/images/facebook.svg'), 
-            twitter:require('../assets/images/twitter.svg'),
-            correo:require('../assets/images/correo.svg')
+            inicio:require('@/assets/images/inicio.svg'),
+            meteorologico:require('@/assets/images/meteorologico.svg'), 
+            generaReporte:require('@/assets/images/generaReporte.svg'), 
+            reporteGrafico:require('@/assets/images/reporteGrafico.svg'), 
+            cdiac:require('@/assets/images/cdiac.svg'), 
+            facebook:require('@/assets/images/facebook.svg'), 
+            twitter:require('@/assets/images/twitter.svg'),
+            correo:require('@/assets/images/correo.svg')
         }
     },
 
@@ -108,7 +108,7 @@ export default {
             this.show = !this.show;
         },
         toggleImg(img){
-            return require('../assets/images/'+img);
+            return require('@/assets/images/'+img);
         }
     }
 }
