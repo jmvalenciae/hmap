@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import HMap from './HMap.vue';
+import HMap from '@/components/HMap.vue';
 import Index from './Index.vue'
 export default {
   name: 'Layout',

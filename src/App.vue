@@ -1,17 +1,15 @@
 <template>
-  <div id="container-fluid">
-    <History/>
-  </div>
+<router-view/>
 </template>
 
 <script>
-import History from './components/History.vue'
+//import History from './components/History.vue'
 
 export default {
   name: 'App',
-  components: {
-    History
-  }
+  //components: {
+  //  History
+  //}
 }
 </script>
 

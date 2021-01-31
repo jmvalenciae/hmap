@@ -23,7 +23,7 @@ Vue.use( VueRouter );
 */
 /*
  */
-export default new VueRouter({
+export const router = new VueRouter({
     routes: [
         {
             path: '/',
