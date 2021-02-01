@@ -30,6 +30,16 @@ export const router = new VueRouter({
             name: 'layout',
             component: Vue.component('Layout', require ('./pages/Layout.vue').default),
             children: [
+                {
+                    path: '/index',
+                    name: 'index',
+                    component: Vue.component('Index', require ('./pages/Index.vue').default),
+                },
+                {
+                    path: '/map',
+                    name: 'map',
+                    component: Vue.component('HMap', require ('./pages/HMap.vue').default),
+                }
             ]
         }
     ]
