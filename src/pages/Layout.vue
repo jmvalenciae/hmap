@@ -6,7 +6,7 @@
       <div class="row">
       <div class="col-12">
           <HMap/>
-          <Index/>
+          <router-view />
       </div>
       </div>
       <!-- /.row -->
@@ -15,12 +15,14 @@
 </template>
 
 <script>
-import HMap from './HMap.vue';
-import Index from './Index.vue'
+import HMap from '@/components/HMap.vue';
 export default {
   name: 'Layout',
-  components: {HMap, 
-               Index}
+  components: {HMap},
+  mounted() {
+      /* Aqui se carga el componente index.vue desde el router */
+      this.$router.push({name: 'index'});
+  }
 }
 </script>
 
