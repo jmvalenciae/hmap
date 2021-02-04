@@ -108,7 +108,7 @@ export default {
 
         stations(){
             /* store.js data (vuex) */
-            return this.$store.state.stations;
+            return this.$store.getters.getStations;
         }
     },
 

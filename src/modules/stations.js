@@ -7,5 +7,12 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     state: {
         stations: estaciones
+    },
+
+    getters: {
+        getStations: state => {
+            // Obtener estaciones con todas sus propiedades
+            return state.stations
+        }
     }
 })

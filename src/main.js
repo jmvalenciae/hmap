@@ -1,10 +1,10 @@
-import 'leaflet/dist/leaflet.css'
-import './scss/main.scss'
-import Vue from 'vue'
-import App from './App.vue'
+import 'leaflet/dist/leaflet.css';   
+import './scss/main.scss';
+import Vue from 'vue';
+import App from './App.vue';
 import { Icon } from 'leaflet';
-import { store } from './store/store'
-import { router } from './routes.js'
+import { store } from './modules/stations.js';
+import { router } from './routes.js';
 
 
 Vue.config.productionTip = false
