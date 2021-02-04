@@ -34,11 +34,6 @@ export const router = new VueRouter({
                     path: '/index',
                     name: 'index',
                     component: Vue.component('Index', require ('./pages/Index.vue').default),
-                },
-                {
-                    path: '/map',
-                    name: 'map',
-                    component: Vue.component('HMap', require ('./pages/HMap.vue').default),
                 }
             ]
         }

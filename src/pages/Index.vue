@@ -1,5 +1,8 @@
 <template>
 <!-- .bienvenidos -->
+<div>
+<HMap />
+
 <section class="bienvenidos">
 <div id="sidebar">
 
@@ -9,7 +12,9 @@
 <LeftMenu />
 <IFooter />
 
+
 </section>
+</div>
 <!-- /.bienvenidos -->
 </template>
 
@@ -17,6 +22,7 @@
 import IHeader from '@/components/index/Header.vue'
 import LeftMenu from '@/components/index/LeftMenu.vue'
 import IFooter from '@/components/index/Footer.vue'
+import HMap from '@/components/HMap.vue'
 export default {
     name: 'Index',
 
@@ -24,6 +30,7 @@ export default {
         IHeader,
         LeftMenu,
         IFooter,
+        HMap
     },
 }
 </script>
