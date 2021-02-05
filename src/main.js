@@ -3,7 +3,7 @@ import './scss/main.scss';
 import Vue from 'vue';
 import App from './App.vue';
 import { Icon } from 'leaflet';
-import { store } from './modules/stations.js';
+import { store } from './store.js';
 import { router } from './routes.js';
 
 
@@ -16,6 +16,7 @@ new Vue({
 }).$mount('#app')
 
 
+// Make work vue-leaflet's icons
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),

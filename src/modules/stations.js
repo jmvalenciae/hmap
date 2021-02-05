@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import estaciones from '../assets/json/estaciones.json'
+import estaciones from '../assets/json/estaciones.json';
 
 Vue.use(Vuex);
 
-export const store = new Vuex.Store({
+export const stations = {
     state: {
         stations: estaciones
     },
@@ -15,4 +15,4 @@ export const store = new Vuex.Store({
             return state.stations
         }
     }
-})
+}
