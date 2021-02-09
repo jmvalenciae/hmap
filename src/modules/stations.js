@@ -1,12 +1,13 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-import estaciones from '../assets/json/estaciones.json';
+import StationAPI from '../api/stations.js'
+//import estaciones from '../assets/json/estaciones.json';
 
-Vue.use(Vuex);
 
 export const stations = {
     state: {
-        stations: estaciones
+        stations: StationAPI.getStations()
+    },
+
+    actions: {
     },
 
     getters: {

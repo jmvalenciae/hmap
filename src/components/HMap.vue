@@ -20,6 +20,7 @@
         <l-popup class=probe><MapMenu v-bind:station="sta"/></l-popup>
 
 
+        <!----------- Stations' icons ----------->
         <l-icon 
             v-if="sta.Red === 'Comunitarias'">
         <img src="../assets/icons/Comunitarias.png">
@@ -94,7 +95,7 @@ export default {
 
     computed:{
         StyleFunction(){
-            /* Geojson style */
+            /* Aqui se configura el sombreado del mapa de Caldas */
             return() => {
                 return {
                 weight: 2,
@@ -114,6 +115,10 @@ export default {
 
     methods: {
         getLatLng: function(lat, latmin, latsec, lng, lngmin, lngsec){
+            /* 
+                Procesar las coordenadas de las stations para mostrarlas 
+                en el mapa
+            */
             var Lat = lat + latmin/60.0 + latsec/36e2
             var Lng = lng + lngmin/60.0 + lngsec/36e2
             return latLng(Lat, -Lng);
