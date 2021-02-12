@@ -5,6 +5,7 @@
 
       <div class="row">
       <div class="col-12">
+          <HMap />
           <router-view />
       </div>
       </div>
@@ -14,10 +15,10 @@
 </template>
 
 <script>
-//import HMap from '@/components/HMap.vue';
+import HMap from '@/components/HMap.vue';
 export default {
   name: 'Layout',
-  //components: {HMap},
+  components: {HMap},
   mounted() {
       /* Aqui se carga el componente index.vue desde el router */
       this.$router.push({name: 'index'});
