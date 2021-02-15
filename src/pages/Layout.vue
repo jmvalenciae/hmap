@@ -5,7 +5,7 @@
 
       <div class="row">
       <div class="col-12">
-          <router-view />
+          <router-view> </router-view>
       </div>
       </div>
       <!-- /.row -->
@@ -14,15 +14,25 @@
 </template>
 
 <script>
-//import HMap from '@/components/HMap.vue';
+//import HMap from './HMap.vue';
+//import Index from './Index.vue'
 export default {
+  
   name: 'Layout',
-  //components: {HMap},
-  mounted() {
-      /* Aqui se carga el componente index.vue desde el router */
-      this.$router.push({name: 'index'});
-  }
+  mounted() {             
+         this.$store.dispatch('loadStations').then(
+          //response => { this.$router.push({ name: 'index' }); },
+          //error    => { console.log('No fue posible cargar la información referente a las estaciones. '); }
+          this.$router.push({ name: 'index' })
+        );
+
+      },  
+  //components: {HMap, 
+    //          Index}
+
 }
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
