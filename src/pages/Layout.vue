@@ -56,6 +56,7 @@ export default {
     position: fixed;
     z-index: 1;
     top: 0;
+    /*
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -65,5 +66,6 @@ export default {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column; 
+    */
     }
 </style>

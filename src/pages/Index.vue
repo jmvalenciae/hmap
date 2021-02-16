@@ -1,7 +1,13 @@
 <template>
 <div>
-<HMap />
-<StationList />
+    <div>
+        <HMap />
+    </div>
+    <!-- .bienvenidos -->
+    <div class="bienvenidos">
+    <StationList />
+    </div>
+    <!-- /.bienvenidos -->
 </div>
 </template>
 
@@ -19,5 +25,15 @@ export default {
 </script>
 
 <style scoped>
+.bienvenidos {
+    position: absolute;
+    height: 90%;
+    width: 30%;
+    min-width: 350px;
+    z-index: 1;
+    top: -4.5%;
+    right: 0.2%;
+    display: flex;
+    }
 
 </style>

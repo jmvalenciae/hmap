@@ -1,6 +1,6 @@
 <template>
-<div>
-Hello World
+<div class="station-list-container">
+Hello World This is a probe
 </div>
 </template>
 
@@ -11,4 +11,12 @@ export default {
 </script>
 
 <style scoped>
+.station-list-container {
+    background-color: white;
+    width:100%;
+    height: 100%;
+    color: black;
+    margin-top: 100px;
+    text-align: center;
+}
 </style>
