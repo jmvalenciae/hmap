@@ -6,6 +6,15 @@
       <div class="row">
       <div class="col-12">
           <router-view> </router-view>
+          <!-- .bienvenidos -->
+          <section class="bienvenidos">
+
+          <IHeader />
+          <LeftMenu />
+          <IFooter />
+
+          </section>
+          <!-- .bienvenidos -->
       </div>
       </div>
       <!-- /.row -->
@@ -14,8 +23,10 @@
 </template>
 
 <script>
-//import HMap from './HMap.vue';
-//import Index from './Index.vue'
+import IHeader from '@/components/index/Header.vue'
+import LeftMenu from '@/components/index/LeftMenu.vue'
+import IFooter from '@/components/index/Footer.vue'
+
 export default {
   
   name: 'Layout',
@@ -27,8 +38,11 @@ export default {
         );
 
       },  
-  //components: {HMap, 
-    //          Index}
+  components: {
+      IHeader,
+      LeftMenu,
+      IFooter
+      }
 
 }
 
@@ -37,4 +51,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.bienvenidos {
+    color: #000;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; 
+    }
 </style>
