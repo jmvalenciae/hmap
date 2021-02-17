@@ -13,7 +13,7 @@
 
 
     <l-marker 
-        v-for="(sta, index) in stations" :key="index"
+        v-for="(sta, index) in stations" :key="index" @click="showStation(sta)"
         :lat-lng="getLatLng(sta.Latitud, sta.__EMPTY_7, sta.__EMPTY_8, 
                             sta.Longitud, sta.__EMPTY_10, sta.__EMPTY_11)">
         <l-tooltip>{{sta.NOMBRES}}</l-tooltip>
@@ -55,6 +55,7 @@
 
 <script>
 import caldasmap from '../assets/json/CaldasMun.json';
+import {EventBus} from '@/event-bus.js'
 import MapMenu from "@/components/StationList/MapMenu.vue"
 import {latLng} from 'leaflet';
 import {LMap, 
@@ -122,6 +123,10 @@ export default {
             var Lat = lat + latmin/60.0 + latsec/36e2
             var Lng = lng + lngmin/60.0 + lngsec/36e2
             return latLng(Lat, -Lng);
+        },
+
+        showStation: function(sta){
+            EventBus.$emit('passStation', sta);
         }
     },
 

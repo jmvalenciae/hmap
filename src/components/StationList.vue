@@ -1,14 +1,31 @@
 <template>
 <div class="station-list-container">
+<MapMenu v-bind:station="station"/>
+
 </div>
 </template>
 
 <script>
-//import MapMenu from '@/components/MapMenu.vue'
+import MapMenu from '@/components/StationList/MapMenu.vue'
+import {EventBus} from '@/event-bus.js'
 export default {
     name: 'StationList',
     components: {
-        //MapMenu
+        MapMenu
+    },
+
+    data(){
+        return {
+            station: {
+                type: Array
+            }
+        }
+    },
+
+    mounted: function(){
+        EventBus.$on('passStation', (sta) => {
+            this.station = sta;
+        })
     }
 }
 </script>
