@@ -1,15 +1,14 @@
 <template>
 <div class="station-list-container">
-<MapMenu />
 </div>
 </template>
 
 <script>
-import MapMenu from '@/components/MapMenu.vue'
+//import MapMenu from '@/components/MapMenu.vue'
 export default {
     name: 'StationList',
     components: {
-        MapMenu
+        //MapMenu
     }
 }
 </script>

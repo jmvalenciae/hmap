@@ -9,6 +9,7 @@
                 </a>
             </li>
         </ul>
+        <slot></slot>
     </div>
 </template>
 

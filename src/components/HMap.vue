@@ -17,7 +17,7 @@
         :lat-lng="getLatLng(sta.Latitud, sta.__EMPTY_7, sta.__EMPTY_8, 
                             sta.Longitud, sta.__EMPTY_10, sta.__EMPTY_11)">
         <l-tooltip>{{sta.NOMBRES}}</l-tooltip>
-        <l-popup class=probe><MapMenu v-bind:station="sta"/></l-popup>
+        <l-popup ><MapMenu v-bind:station="sta"/></l-popup>
 
 
         <!----------- Stations' icons ----------->
@@ -55,7 +55,7 @@
 
 <script>
 import caldasmap from '../assets/json/CaldasMun.json';
-import MapMenu from "./MapMenu.vue"
+import MapMenu from "@/components/StationList/MapMenu.vue"
 import {latLng} from 'leaflet';
 import {LMap, 
         LTileLayer, 

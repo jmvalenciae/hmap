@@ -1,17 +1,17 @@
 <template>
 <div id="menu">
-    <TabMenu :tabs="['Info', 'Galeria', 'Otros']" 
-             :selected="selected" @selected="setSelected">
+        <TabMenu :tabs="['Información', 'Variables', 'Galería']" 
+                 :selected="selected" @selected="setSelected">
 
-    <Tab :isSelected="selected === 'Info'">
+    <Tab :isSelected="selected === 'Información'">
         <h1>Hello World</h1>
     </Tab>
 
-    <Tab :isSelected="selected === 'Galeria'">
+    <Tab :isSelected="selected === 'Variables'">
         <p>Goodbye world</p>
     </Tab>
 
-    <Tab :isSelected="selected === 'Otros'">
+    <Tab :isSelected="selected === 'Galería'">
         <li>Hello</li>
         <li>Hello</li>
         <li>Hello</li>
@@ -20,8 +20,8 @@
 </div>
 </template>
 <script>
-import TabMenu from './tabs/TabMenu.vue'
-import Tab from './tabs/Tab.vue'
+import TabMenu from '@/components/StationList/TabMenu.vue'
+import Tab from '@/components/StationList/Tab.vue'
 
 export default {
     name: "MapMenu",
@@ -34,7 +34,7 @@ export default {
 
     data(){
         return {
-            selected: 'Info'
+            selected: 'Información'
         }
     },
 
