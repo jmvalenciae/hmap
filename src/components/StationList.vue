@@ -1,12 +1,16 @@
 <template>
 <div class="station-list-container">
-Hello World This is a probe
+<MapMenu />
 </div>
 </template>
 
 <script>
+import MapMenu from '@/components/MapMenu.vue'
 export default {
-    name: 'StationList'
+    name: 'StationList',
+    components: {
+        MapMenu
+    }
 }
 </script>
 
