@@ -1,8 +1,8 @@
 <template>
 <div class="station-list-container">
-<button type="button" class="close" @click="stations_list=[]">&times;</button>
-<MapMenu v-for="(sta, index) in stations_list" 
-         v-bind:key="index" v-bind:station="sta"/>
+<button type="button" class="close" @click="closeSidebar">&times;</button>
+<MapMenu v-for="(sta, index) in stations_list" v-bind:key="index" 
+         v-bind:station="sta"/>
 
 </div>
 </template>
@@ -25,10 +25,19 @@ export default {
         }
     },
 
+    methods: {
+        closeSidebar(){
+            this.stations_list = [];
+            this.$emit('closeSidebar');
+        },
+    },
+
+
     mounted: function(){
         EventBus.$on('passStation', (sta) => {
             this.stations_list = this.stations_list.concat(sta);
             this.station = sta;
+            this.$emit('openSidebar');
         })
     }
 }

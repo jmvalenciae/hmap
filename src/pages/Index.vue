@@ -5,7 +5,7 @@
     </div>
     <!-- .bienvenidos -->
     <div class="bienvenidos">
-    <StationList />
+    <StationList v-show="show" @closeSidebar="closeSidebar" @openSidebar="openSidebar"/>
     </div>
     <!-- /.bienvenidos -->
 </div>
@@ -21,6 +21,22 @@ export default {
         HMap,
         StationList
     },
+
+    data(){
+        return {
+            show: false
+        }
+    },
+
+    methods: {
+        closeSidebar(){
+            this.show = false;
+        },
+
+        openSidebar(){
+            this.show = true;
+        }
+    }
 }
 </script>
 
